@@ -1,0 +1,62 @@
+.modal {
+    display: none;
+  }
+  
+  .modal.is-active {
+    display: flex;
+  }
+  
+  .modal-card {
+    max-width: 500px;
+    margin: auto;
+    width: 100%;
+  }
+  
+  .update-button {
+    padding: 0.625rem 1.25rem;
+    background-color: #1d4ed8; /* Blue */
+    color: #fff;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .update-button:hover {
+    background-color: #2563eb; /* Darker blue */
+  }
+  
+  .delete-button {
+    padding: 0.625rem 1.25rem;
+    background-color: #dc2626; /* Red */
+    color: #fff;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #e11d48; /* Darker red */
+  }
+  
+  .field {
+    margin-bottom: 1.5rem;
+  }
+  
+  .input,
+  .textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+  }
+  
+  .input:focus,
+  .textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  }
+  
+  

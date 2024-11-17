@@ -1,0 +1,169 @@
+    .get-started-container {
+    text-align: center;
+    /* padding: 10px; */
+    background-color: #525252;
+    padding-bottom: 5px;
+  }  
+  
+  /* TOP INTRO SECTION */
+  .land-1{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: auto ;
+    justify-content: center;
+    background-color: white;
+    gap: 10px;
+    
+   }
+
+  h1 {
+    margin-bottom: 1rem;
+    color: rgb(41, 41, 41);
+    font-size: 30px;
+    font-weight: 900;
+    text-align: left;
+    margin:0px;
+      padding: 0px;
+      margin-left: 15px;
+    }
+
+  .underline{
+    height: 5px;
+    border-radius: 10px;
+    margin-left: 15px;
+    width: 42%;
+    background-color: #525252;
+   }
+
+    svg{ 
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+    }
+
+    p {
+      margin:0px;
+      padding: 0px;
+      text-align: left ;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      margin-right: 8px;
+      margin-left: 20px;
+      font-size: 17px;
+    }
+
+    span{
+      color: #0099ff;
+      font-weight: bold;
+    }
+
+    .land-1 img{
+      height: auto;
+      width: 100%;
+    }
+
+  /* FEATURES SECTION */
+  .title{
+    color: white;
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    padding-top: 5px;
+    gap: 15px;
+  }
+
+  .feature{
+    height: auto;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .feature:nth-child(1){
+    background-color: #F4E8D6;
+  }
+
+.feature:nth-child(1) img{
+    height: auto;
+    width: 40%;
+  }
+
+
+  .feature:nth-child(2){
+    background-color: #CEE3A9;
+  }
+
+  .feature:nth-child(2) img{
+    height: auto;
+    width: 100%;
+  }
+
+  .feature:nth-child(3){
+    background-color: white;
+  }
+
+  .feature:nth-child(3) img{
+    height: auto;
+    width: 100%;
+  }
+
+
+  .feature h2 { 
+    color: rgb(0, 0, 0);
+}
+
+
+.btns{
+  padding: 9.5px 5px;
+  background-color:#306fc9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.btns i{
+  margin-left: 10px;
+  position: absolute;
+}
+
+.btns:focus > i{
+  animation: truckdrive .9s .1s normal;
+}
+
+@keyframes truckdrive {
+  0%{
+    margin-left: 10px;
+    position: absolute;
+  }
+
+  100%{
+    margin-left: 75px;
+    position: absolute;
+  }
+  
+}
+
+   @media screen and (max-width:320px) {
+    
+
+  }

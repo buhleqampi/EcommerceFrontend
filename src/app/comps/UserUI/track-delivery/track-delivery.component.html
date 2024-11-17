@@ -1,0 +1,31 @@
+ <div class="container mx-auto my-8">
+    <h1 class="text-3xl font-bold mb-4 text-black">Live Delivery Tracking</h1>
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+      <div class="mb-4">
+        <h2 class="text-xl font-bold text-black">Order Details</h2>
+        <p class="text-black">Order ID: 12345</p>
+        <p class="text-black">Expected Delivery: July 15, 2024</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold text-black">Tracking Information</h2>
+        <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-start space-y-2">
+          <div class="w-full bg-gray-300 rounded-full h-6 relative" style="height: 60px;">
+            <div class="bg-green-500 h-full rounded-l-full rounded-r-none" [style.width]="(currentStep / (trackingSteps.length - 1)) * 100 + '%'"></div>
+            <div class="absolute top-1/2 left-0 transform -translate-y-1/2 text-gray-500 font-medium text-black">
+              {{ trackingSteps[currentStep] }}
+            </div>
+            <div class="absolute top-1/2 right-0 transform -translate-y-1/2 text-gray-500 font-medium border-l border-gray-300 pl-4 text-black">
+              {{ currentDateTime }}
+            </div>
+            <div class="absolute top-1/2 transform -translate-y-1/2" [style.left]="(currentStep / (trackingSteps.length - 1)) * 100 + '%'">
+              <svg class="w-6 h-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-map></app-map>

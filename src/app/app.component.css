@@ -1,0 +1,30 @@
+/* *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.background{
+     width: 100vw;
+     z-index:-100;
+     background: linear-gradient(
+     to right,
+     #d3d3d3,
+     #ebeaea,
+     #ebeaea,
+     #d3d2d2
+  );
+}
+.settings {
+position: fixed;
+top: 20px;
+right: 20px;
+}
+
+.settings select {
+padding: 8px 16px;
+border-radius: 4px;
+background-color: #f1f1f1;
+color: #333333;
+font-weight: bold;
+cursor: pointer;
+} */

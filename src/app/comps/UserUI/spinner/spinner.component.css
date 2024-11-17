@@ -1,0 +1,37 @@
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  z-index: 9999;
+}
+
+.spinner {
+  animation: fadeInSpin 5s ease-in-out forwards;
+}
+
+.spinner img {
+  width: 100px; /* Initial size of the logo */
+  height: 100px; /* Initial size of the logo */
+}
+
+@keyframes fadeInSpin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+    width: 100px; /* Initial size of the logo */
+    height: 100px; /* Initial size of the logo */
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+    width: 150px; /* Final size of the logo */
+    height: 150px; /* Final size of the logo */
+  }
+}
+

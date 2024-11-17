@@ -1,0 +1,44 @@
+<app-navigation></app-navigation>
+
+<section>
+    <h1>Your Orders</h1>
+
+    <div class="order-holder mb-23">
+        <div *ngFor="let order of orders" class="order-item" routerLink='/vieworder'(click)='passOrder(order)'>
+
+            <!-- <img src="../../../../assets/D183066B-A44A-48E7-88D2-6C123BBFD18B_4_5005_c.jpeg" /> -->
+            
+            <img src="../../../../assets/images (3).png" />
+
+            <div class="del-det">
+                <div class="side-by-side">
+                    <p class="pb-2">{{order.id | slice:(order.id.length / 2)}}
+                        <div *ngIf="order.status == 'cancelled'" class="on-going cancelled">
+                        </div>
+
+                        <div *ngIf="order.status == 'in-progress'" class="on-going in-progress">
+                        </div>
+
+                        <div *ngIf="order.status == 'complete'" class="on-going complete">
+                        </div>
+
+                        <div *ngIf="order.status == 'pending'" class="on-going pending">
+                        </div>
+            
+                    </div>
+            
+                    <!-- <label>{{order.description}}</label> -->
+                    <p>Items: {{ order.items.length}}</p>  
+                    <label>Status: {{order.status}}</label>
+                    <!-- <label>{{order.address.country}}</label> -->
+                    <div class="side-by-side">
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</section>
+          
+
+<app-footer> </app-footer>

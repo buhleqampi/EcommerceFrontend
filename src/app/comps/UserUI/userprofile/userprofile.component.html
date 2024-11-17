@@ -1,0 +1,89 @@
+
+
+
+<section class=" py-6">
+  
+
+  
+
+
+<div class=" py-8">
+  <div class="container mx-auto px-4">
+    <div class="bg-white rounded-lg shadow-lg max-w-md mx-auto">
+      <div *ngIf="user" class="flex flex-col items-center p-8">
+        <img class="w-32 h-32 rounded-full mb-4 object-cover" src ="{{user.img}}" alt="Profile Picture">
+        <h2 class="text-2xl font-bold mb-2">Hi  <span>{{ user.username}}</span></h2>
+        <p class="text-gray-600 mb-6"></p>
+        <ul class="text-gray-700 space-y-3 w-full">
+          <li class="flex items-center">
+            <span></span>
+          </li>
+          
+        </ul>
+        <div class="mt-6 space-x-4">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section id="Projects"
+    class="w-fit mx-auto mb-20 grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-5 gap-x-5 mt-10">
+
+      
+    <div  class="w-32 h-32 px-1 border  shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg ">
+        <a routerLink="/favourites">
+          <div class=" h-full w-full i flex flex-col justify-center items-center rounded-md">
+            <span><svg class="w-24 h-24 text-red-700 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z"/>
+            </svg>
+            </span>
+            <p class="text-s font-manrope font-bold text-navy-800">Favorites</p>
+          </div>
+            
+        
+        </a>
+    </div> 
+
+    <div  class="w-32 h-32 px-1 border  shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg ">
+      <a routerLink="/orders">
+        <div class=" h-full w-full i flex flex-col justify-center items-center rounded-md">
+          <span><svg class="w-24 h-24 text-orange-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M9 7V2.221a2 2 0 0 0-.5.365L4.586 6.5a2 2 0 0 0-.365.5H9Zm2 0V2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9h5a2 2 0 0 0 2-2Zm2-2a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2h-3Zm0 3a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2h-3Zm-6 4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-6Zm8 1v1h-2v-1h2Zm0 3h-2v1h2v-1Zm-4-3v1H9v-1h2Zm0 3H9v1h2v-1Z" clip-rule="evenodd"/>
+          </svg>
+          
+          </span>
+          <p class="text-s font-manrope font-bold text-navy-800">Orders</p>
+        </div>
+          
+      
+      </a>
+  </div> 
+   
+  <div  class="w-32 h-32 px-1 border  shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg ">
+    <a routerLink="/myinfo">
+      <div class=" h-full w-full i flex flex-col justify-center items-center rounded-md">
+        <span><svg class="w-24 h-24 text-blue-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4Zm10 5a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Zm0 3a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Zm0 3a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Zm-8-5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm1.942 4a3 3 0 0 0-2.847 2.051l-.044.133-.004.012c-.042.126-.055.167-.042.195.006.013.02.023.038.039.032.025.08.064.146.155A1 1 0 0 0 6 17h6a1 1 0 0 0 .811-.415.713.713 0 0 1 .146-.155c.019-.016.031-.026.038-.04.014-.027 0-.068-.042-.194l-.004-.012-.044-.133A3 3 0 0 0 10.059 14H7.942Z" clip-rule="evenodd"/>
+        </svg>
+        
+        
+        </span>
+        <p class="text-s font-manrope font-bold text-navy-800">My Info.</p>
+      </div>
+        
+    
+    </a>
+</div> 
+
+  
+
+</section>
+
+
+
+</section>
+<app-footer></app-footer>
+

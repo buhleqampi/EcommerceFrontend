@@ -1,0 +1,86 @@
+<a (click)="goBack()" class="flex space-x-3 rtl:space-x-reverse">
+  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+  </svg>
+  
+</a>
+
+
+
+<section>
+  <h1>Your Business Orders</h1>
+
+  <div class="order-holder">
+    <div *ngFor="let order of orders" class="order-item" routerLink="/orders/{{order.id}}" >
+      <img src="../../../../assets/delivery.png" />
+
+      <div class="del-det">
+        <div class="side-by-side">
+          <p class="pb-2">{{ order.id | slice:(order.id.length / 2) }}</p>
+
+          <div *ngIf="order.status == 'cancelled'" class="on-going cancelled"></div>
+          <div *ngIf="order.status == 'in-progress'" class="on-going in-progress"></div>
+          <div *ngIf="order.status == 'complete'" class="on-going complete"></div>
+          <div *ngIf="order.status == 'pending'" class="on-going pending"></div>
+        </div>
+
+        <p>User Id: #{{ order.userId }}</p>
+        <p class="pb-2">Order Number: {{ orders.indexOf(order) + 1 }}</p>
+        <p>Order Description: {{ order.description }}</p>
+        <p class="pb-2">Order Address At: {{ order.shippingAddress.address }}</p>
+        <p>Items: {{ order.items.length }}</p>
+        <p class="pb-2">Ordered Date: {{ order.createdAt }}</p>
+        <p class="pb-2">Total: R{{ order.total }}</p>
+
+        <!-- <div class="relative">
+          <button (click)="toggleDropdown(order.id)" class="assign-driver-button">
+            Assign to Driver
+          </button>
+          <ul *ngIf="isDropdownOpen(order.id)" class="dropdown-menu">
+            <li *ngFor="let driver of drivers" (click)="assignDriver(order.id, driver.id)" class="dropdown-item">
+              {{ driver.name }}
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="orders.length === 0">
+  No orders found.
+</div>
+
+
+<!-- <div class="p-1 flex flex-wrap items-center justify-center"> 
+  <h1 class="p-4 flex justify-center w-80 text-xl order-gray-200 rounded-lg shadow dark:bg-black-800 dark:border-gray-700"> 
+    Your Business Orders
+  </h1>
+  <div class="w-80 max-w-md p-4 mb-22 flex m-2 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"  *ngFor="let order of orders">
+    <a routerLink="/orders">
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700" >
+        <li class="py-3 sm:py-4 " *ngIf="orders.length > 0 " >
+          <p class="pb-2">Order Number: {{orders.indexOf(order)+1}}
+          <p>User Id:   #{{ order.userId }}</p>
+          <p class="pb-2">Order Id: #{{ order.id }}</p> 
+          <p>Order Description:   {{ order.description }}</p>
+          <p class="pb-2">order address At: {{order.shippingAddress.address}}</p>
+          <p class="pb-2">Status: {{order.status}}</p>
+          <p class="pb-2">Number Of Items: {{ order.items.quantity}}</p>
+          <p class="pb-2">ordered Date: {{ order.createdAt }}</p>
+
+          <p class="pb-2">Total: R{{ order.total }}</p>
+          <button class="flex mx-auto p-2 mt-4 bg-orange-500 w-40 justify-center rounded-lg text-uppercase"> 
+          assign to driver
+        </button>
+        <hr class="bg-red-700 mt-10">
+      </li>
+    </ul>
+    </a>
+  </div>
+</div>
+<div *ngIf="!orders">
+  No orders found.
+</div> -->
+
+<app-finalnav></app-finalnav>

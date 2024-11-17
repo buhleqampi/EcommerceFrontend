@@ -1,0 +1,81 @@
+<div class="container border-3">
+    <form [formGroup]="registerForm" (ngSubmit)="onSignUp()" class="rounded-lg"> 
+        <h2 class="tit text-white">Shukuma</h2>
+        <div class="message text-white">
+          <p>One account</p>
+          <p>Many possibilites</p>
+        </div>
+        
+        <div class="form-group">
+          <label for="userName">Username:</label>
+          <input type="text" formControlName="username" placeholder="userName" id="username" class="form-control text-blue-800 focus:ring-orange-700 bg-white" placeholder="User Name" required>
+        
+          
+            <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)" class="error text-white">
+            <div *ngIf="registerForm.get('username')?.errors?.['required']">Username is required.</div>
+            <div *ngIf="registerForm.get('username')?.errors?.['minlength']">
+              Last Name must be at least 6 characters long.
+            </div>
+            </div>
+        
+        </div>  
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" formControlName="email" placeholder="Type Email" id="username" class="form-control  text-blue-800 focus:ring-orange-700 bg-white" placeholder="email" required>
+        
+            <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)" class="error text-white">
+              <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required.</div>
+              <div *ngIf="registerForm.get('email')?.errors?.['pattern']">Please enter a valid email address</div>
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" formControlName="password" placeholder="Type Password" id="password"  class="form-control  text-blue-800 focus:ring-orange-700 bg-white" placeholder="Password" required>
+            <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="error text-white">
+            <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</div>
+            <div *ngIf="registerForm.get('password')?.errors?.['minlength']">
+              password must be at least 6 characters long.
+            </div>
+            
+          </div>
+          </div>
+
+        <div class="form-group">
+          <label for="password"> Confirm password:</label>
+          <input type="password" formControlName="confirm_password" placeholder="Type Password" id="password"  class="form-control  text-blue-800 focus:ring-orange-700 bg-white" placeholder="Password" required>
+          <div *ngIf="registerForm.get('confirm_password')?.invalid && (registerForm.get('confirm_password')?.dirty || registerForm.get('confirm_password')?.touched)" class="error text-white">
+            <div *ngIf="registerForm.get('confirm_password')?.errors?.['required']">Password is required.</div>
+            <div *ngIf="registerForm.get('confirm_password')?.errors?.['minlength']">
+              password must be at least 6 characters long.
+            </div>
+            <div *ngIf="registerForm.get('confirm_password')?.errors?.['confirmPasswords']">Password don't match.</div> 
+            
+          </div>
+          <div *ngIf="registerForm.errors?.['confirmPasswords']" class="text-white">Password don't match.</div> 
+      
+        
+        
+        </div>
+
+        <p  class="other text-white">Already have an account? <a routerLink="/login">LOGIN</a> </p>
+
+        <div>
+          <div *ngIf="isSuccessful" class="z-40 w-full text-center  ">
+            <div class="btn btn-success text-white px-3">
+              {{successMessage}} 
+             </div>
+          </div>
+
+          <div  *ngIf="isSignUpFailed" class="z-40 w-full text-center  " >
+            
+            <div class="btn btn-error text-white px-3">
+              {{errorMessage}} 
+             </div>
+          </div>
+         
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+</div>

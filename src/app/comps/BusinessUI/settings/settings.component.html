@@ -1,0 +1,174 @@
+<!-- settings.component.html -->
+<div class="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 mb-6">Settings</h1>
+  
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="px-6 py-5 border-b border-gray-200">
+          <h2 class="text-xl font-semibold text-gray-900">Account Settings</h2>
+        </div>
+  
+        <div class="px-6 py-5">
+          <div class="mb-6">
+            <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+            <div class="mt-1">
+              <input type="text" id="username" name="username" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" value="johndoe">
+            </div>
+          </div>
+  
+          <div class="mb-6">
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <div class="mt-1">
+              <input type="email" id="email" name="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" value="johndoe@example.com">
+            </div>
+          </div>
+  
+          <div class="mb-6">
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <div class="mt-1">
+              <input type="password" id="password" name="password" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+            </div>
+          </div>
+        </div>
+  
+        <div class="px-6 py-5 bg-gray-50 text-right">
+          <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Save Changes
+          </button>
+        </div>
+      </div>
+  
+      <div class="bg-white shadow-md rounded-lg overflow-hidden mt-8">
+        <div class="px-6 py-5 border-b border-gray-200">
+          <h2 class="text-xl font-semibold text-gray-900">Notification Settings</h2>
+        </div>
+  
+        <div class="px-6 py-5">
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input id="email-notifications" name="email-notifications" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="email-notifications" class="font-medium text-gray-700">Email Notifications</label>
+              <p class="text-gray-500">Receive email notifications for important updates.</p>
+            </div>
+          </div>
+  
+          <div class="flex items-start mt-4">
+            <div class="flex items-center h-5">
+              <input id="push-notifications" name="push-notifications" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="push-notifications" class="font-medium text-gray-700">Push Notifications</label>
+              <p class="text-gray-500">Receive push notifications for real-time updates.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="px-6 py-5 bg-gray-50 text-right">
+          <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Save Changes
+          </button>
+        </div>
+      </div>
+  
+      <div class="bg-white shadow-md rounded-lg overflow-hidden mt-8">
+        <div class="px-6 py-5 border-b border-gray-200">
+          <h2 class="text-xl font-semibold text-gray-900">Privacy Settings</h2>
+        </div>
+  
+        <div class="px-6 py-5">
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input id="public-profile" name="public-profile" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="public-profile" class="font-medium text-gray-700">Public Profile</label>
+              <p class="text-gray-500">Make your profile visible to everyone.</p>
+            </div>
+          </div>
+  
+          <div class="flex items-start mt-4">
+            <div class="flex items-center h-5">
+              <input id="data-sharing" name="data-sharing" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="data-sharing" class="font-medium text-gray-700">Data Sharing</label>
+              <p class="text-gray-500">Allow sharing of anonymous usage data to improve the service.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="px-6 py-5 bg-gray-50 text-right">
+          <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Save Changes
+          </button>
+        </div>
+      </div>
+  
+      <div class="bg-white shadow-md rounded-lg overflow-hidden mt-8">
+        <div class="px-6 py-5 border-b border-gray-200">
+          <h2 class="text-xl font-semibold text-gray-900">Appearance Settings</h2>
+        </div>
+  
+        <section class="py-16">
+          <div class="container mx-auto">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden mb-8">
+              <div class="px-6 py-5">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input id="dark-mode" name="dark-mode" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                  </div>
+                  <div class="ml-3 text-sm">
+                    <label for="dark-mode" class="font-medium text-gray-700">Dark Mode</label>
+                    <p class="text-gray-500">Enable dark mode for a more comfortable viewing experience.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden mb-8">
+              <div class="px-6 py-5">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input id="font-size" name="font-size" type="range" min="12" max="24" class="focus:ring-indigo-500 h-4 w-full text-indigo-600 border-gray-300 rounded">
+                  </div>
+                  <div class="ml-3 text-sm">
+                    <label for="font-size" class="font-medium text-gray-700">Font Size</label>
+                    <p class="text-gray-500">Adjust the font size for better readability.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="bg-white shadow-md rounded-lg overflow-hidden mb-8">
+              <div class="px-6 py-5">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input id="theme" name="theme" type="radio" value="light" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                  </div>
+                  <div class="ml-3 text-sm">
+                    <label for="theme" class="font-medium text-gray-700">Light Theme</label>
+                    <p class="text-gray-500">Use the light theme for a clean and bright appearance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="bg-white shadow-md rounded-lg overflow-hidden mb-8">
+              <div class="px-6 py-5 border-b border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900">Help & Support</h3>
+              </div>
+              <div class="px-6 py-5">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Contact Support</a>
+                  </div>
+                  <div class="ml-3 text-sm">
+                    <p class="text-gray-500">Get in touch with our support team for any questions or issues.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>          

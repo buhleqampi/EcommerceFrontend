@@ -1,0 +1,86 @@
+<!-- <div class="order-div w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto pb-4 border-x-2 shadow-xl">
+    <h3 class="font-manrope text-center font-bold text-2xl sm:text-4xl leading-10 text-black mb-11 py-5">
+        Order {{orderId.slice(1)}}
+    </h3>
+    <h6 class="font-medium text-xl leading-8 text-black mb-3">Hello, Buhle</h6>
+    <p class="font-normal text-lg leading-8 text-gray-500 mb-11">Your order has been recieved and you will be notified when its ready.</p>
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8 py-6 border-y border-gray-900 mb-6">
+        <div class="box group">
+            <p class="font-normal text-base leading-7 text-gray-500 mb-3 transition-all duration-500 group-hover:text-gray-700">Date</p>
+            <h6 class="font-semibold font-manrope leading-9 text-black">{{date.slice(0,22)}}</h6>
+        </div>
+        <div class="box group">
+            <p class="font-normal text-base leading-7 text-gray-500 mb-3 transition-all duration-500 group-hover:text-gray-700">Order</p>
+            <h6 class="font-semibold font-manrope leading-9 text-black"># {{orderId}}</h6>
+        </div>
+
+        <div class="box group">
+            <p class="font-normal text-base leading-7 text-gray-500 mb-3 transition-all duration-500 group-hover:text-gray-700">Delivery Address:</p>
+            <h6 class="font-semibold font-manrope leading-9 text-black">718 Joe Slovo Crescent, Nyanga 7750
+            </h6>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="flex items-center justify-center sm:justify-end w-full my-6">
+        <div class=" w-full">
+            <div class="flex items-center justify-between mb-6">
+                <p class="font-normal text-xl leading-8 text-gray-500">Order Items: </p>
+
+            </div>
+            <div class="flex items-center justify-between  mb-4" *ngFor="let item of orderedItems; index as i">
+                {{item.quantity}}<p class=" leading-8 text-gray-500">{{item.description}}</p>
+                <p class=" leading-8 text-gray-900">R{{item.price}}</p>
+            </div>
+
+            <div class="flex items-center justify-between mb-6">
+                <p class="font-normal leading-8 text-gray-500">Discount</p>
+                <p class="font-semibold leading-8 text-gray-900">R0.00</p>
+            </div>
+            <div class="flex items-center justify-between py-6 border-y  border-grey-900">
+                <p class="font-manrope font-semibold text-2xl leading-9 text-gray-900">Total</p>
+                <p class="font-manrope font-bold text-2xl leading-9 text-indigo-600">R{{total}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="data mb-6">
+
+        <button routerLink="/tracking" class="w-full text-center bg-indigo-600 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-indigo-700" >
+            Track Order
+        </button>
+    </div>
+    <button class="text-center text-blue-600 uppercase underline-offset-2 " routerLink="/orders">back</button>
+</div>-->
+<app-footer></app-footer> 
+
+<section>
+    <img src="../../../../assets/D183066B-A44A-48E7-88D2-6C123BBFD18B_4_5005_c.jpeg"/>
+
+    <h1># {{order?.id}}</h1>
+    <label>Driver: Leon Sch </label>
+    <!-- <label>Address: {{order?.shippingAddress?.address}}</label> -->
+
+    <div class="side-by-side">
+        <label> Item: {{order?.items?.length}}</label>
+
+        <!-- <label>Qty: 1</label> -->
+    </div>
+    
+
+    <div class="side-by-side">
+        <label>Cash</label>
+
+        <label class="price">R200</label>
+    </div>
+
+    <div id="map" *ngIf="order?.status == 'in-progress'"></div>
+    
+<div class="divider"></div>    
+
+</section>

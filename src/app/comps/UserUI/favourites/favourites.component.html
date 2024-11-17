@@ -1,0 +1,44 @@
+<app-navigation></app-navigation>
+
+<div class="header flex justify-center">
+  <h1 class="p-4 flex justify-center w-80 text-xl order-gray-200 rounded-lg shadow dark:bg-black-800 dark:border-gray-700"> 
+    Your favorites.
+  </h1>
+</div>
+
+<section id="Projects"
+    class="w-fit mx-auto mb-20 grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-5 gap-x-2 mt-10">
+
+  <div *ngFor="let favorite of favorites" class="w-40 h-120 px-1 shadow-md mx-auto rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+    <a>
+      <div class="border-2 h-40 w-full i mt-2 flex justify-center items-center rounded-md ">
+        <img src="{{favorite.itemId.imageUrl}}"
+                alt="Product" class=" w-28 h-24" /> 
+      </div>
+        
+        <div class=" overflow-hidden text-ellipsis mt-2">
+            <span class="text-gray-400 mr-3 uppercase text-xs  truncate ">{{favorite.itemId.description}}</span>
+        
+            <div class="flex items-center mt-2">
+              <button (click)="confirmDelete(favorite.id)" class="border rounded-lg px-2 py-1 bg-red-500 text-white hover:bg-red-700 focus:outline-none focus:ring-red-500 focus:ring-opacity-50 flex items-center">
+                <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M8.586 2.586A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4a2 2 0 0 1 .586-1.414ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z" clip-rule="evenodd"/>
+                </svg>
+                <span class="ml-1">Delete</span>
+              </button>
+              
+                <!-- <p class="text-lg font-bold text-red-700 cursor-auto ">R{{favorite.itemId.price}}</p> -->
+                <div class="ml-auto me-2 ">
+                  <div class="border-3 w-20 h-9 rounded-lg flex justify-center items-center  text-white bg-blue-700" routerLink="/view_item/{{favorite.itemId._id}}">
+                    <svg class="w-6 h-6 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="84" height="84" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+                      <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                    </svg>
+                    
+                  </div>
+                </div>
+            </div>
+        </div>
+    </a>
+  </div>
+</section>

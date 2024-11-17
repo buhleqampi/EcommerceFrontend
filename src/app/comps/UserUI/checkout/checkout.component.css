@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+  height: 100%
+}
+/* profiile starts */
+
+    form{
+        display: grid;
+        justify-content: center;
+        background-color:rgb(236, 230, 230);
+        padding: 40px 20px;
+    }
+
+    .flex0 input, .flex1 input, .flex2 input{
+        width:70vw;
+        height:60px;
+        background-color: rgba(236, 230, 230, 0.404);
+        border:none;
+        border-bottom:1px solid rgb(105, 104, 104);
+    }
+    .flex1 {
+        display: flex;
+    }
+    .flex1 .firstName{
+        width:100%;
+    }
+    .flex1 .lastName{
+        width:100%;
+    }
+
+  .flex0 input:focus,
+  .flex1 input:focus, 
+  .flex2 input:focus{
+    outline: none;
+    padding: 15px;
+  }
+
+  .d-flex{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .totalButton{
+    margin-top: 15px;
+  }
+  input.submit{
+    background-color: #212529 !important;
+    color: rgba(229, 233, 227, 0.973);
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 10px;
+  }
+
+  .submit:hover{
+    background-color: #080808 !important;
+    color:rgba(229, 233, 227, 0.973);
+    border-radius:20px;
+  }

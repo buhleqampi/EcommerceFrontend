@@ -1,0 +1,24 @@
+*{
+    background-color: rgb(255, 255, 255);
+}
+
+.div{
+    background-color: aqua;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+img{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+#map{
+    height:100vh;
+    width:100%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

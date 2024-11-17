@@ -1,0 +1,101 @@
+<a (click)="goBack()" class="flex space-x-3 rtl:space-x-reverse">
+  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+  </svg>
+  
+</a>
+
+<section class="mb-24 mt-5 container">
+  <div *ngIf="selectedProduct" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <a class="border-3 ">
+      <img class="w-full mx-2 p-8 rounded-t-lg" src="{{selectedProduct.imageUrl}}" alt="product image" />
+    </a>
+    <div class="px-5 pb-5">
+      <a href="#">
+        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ selectedProduct.title }}</h5>
+      </a>
+      <p>{{selectedProduct.description}}</p>
+      <div class="flex items-center mt-2.5">
+        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+          <!-- Rating stars here -->
+        </div>
+        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+      </div>
+      <div class="my-2">
+        <span class="text-3xl font-bold text-red-700 dark:text-white">R{{selectedProduct.price}}</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <div *ngIf="errMessage">
+          item already added
+        </div>
+        <button class="update-button" (click)="toggleBox('updateForm')">Update</button>
+        <button class="delete-button" (click)="onDeleteProduct(selectedProduct._id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!selectedProduct">
+    <p>Loading product details...</p>
+  </div>
+
+  <div *ngIf="openedBox === 'updateForm'" class="update-form">
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+      <div class="field">
+        <label class="label">Category</label>
+        <div class="control">
+          <input class="input" type="text" name="category" [(ngModel)]="selectedProduct.category" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Title</label>
+        <div class="control">
+          <input class="input" type="text" name="title" [(ngModel)]="selectedProduct.title" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Description</label>
+        <div class="control">
+          <textarea class="textarea" name="description" [(ngModel)]="selectedProduct.description" required></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Price</label>
+        <div class="control">
+          <input class="input" type="number" name="price" [(ngModel)]="selectedProduct.price" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Stock</label>
+        <div class="control">
+          <input class="input" type="number" name="stock" [(ngModel)]="selectedProduct.stock" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Image</label>
+        <div class="control">
+          <input class="input" type="file" (change)="fileSelect($event)">
+        </div>
+      </div>
+
+      <div class="field">
+        <figure class="image is-128x128" *ngIf="imagePreview">
+          <img [src]="imagePreview" alt="Image preview">
+        </figure>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link" type="submit">Update</button>
+        </div>
+        <div class="control">
+          <button class="button is-link is-light" type="button" (click)="toggleBox('updateForm')">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+

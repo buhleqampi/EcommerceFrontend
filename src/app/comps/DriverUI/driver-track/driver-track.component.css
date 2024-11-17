@@ -1,0 +1,85 @@
+.uber-delivery-tracking {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tracking-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .tracking-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  
+  .tracking-header p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .tracking-progress {
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .progress-step {
+    text-align: center;
+    flex-basis: 33.33%;
+  }
+  
+  .step-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .step-label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .step-time {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .progress-step.completed .step-icon,
+  .progress-step.completed .step-label {
+    color: #4CAF50;
+  }
+  
+  .progress-step.active .step-icon,
+  .progress-step.active .step-label {
+    color: #2196F3;
+  }
+  
+  .tracking-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .detail-item {
+    flex-basis: 48%;
+    margin-bottom: 16px;
+  }
+  
+  .detail-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .detail-value {
+    font-size: 16px;
+    color: #666;
+  }

@@ -1,0 +1,84 @@
+
+<section class="bg-gray-100 py-12">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Products for Mzimkhulu</h2>
+    <!-- <app-addproduct></app-addproduct> -->
+
+   <section id="Projects" 
+   class="w-fit mx-auto mb-20 grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-5 gap-x-2 mt-10"> 
+
+   <!-- ✅ Product card 1 - Starts Here 👇   -->
+   <div *ngFor="let item of products" class="w-40 h-52 px-1 shadow-md  rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+       <a>
+           <div class="border-2 h-28 w-full i mt-2 flex justify-center items-center rounded-md ">
+               <img [src]="item.imageUrl"
+                   alt="Product" class=" w-28 h-24" /> 
+           </div>
+           
+           <div class=" overflow-hidden text-ellipsis mt-2">
+               <span class="text-gray-400 mr-3 uppercase text-xs  truncate ">{{item.title}}</span>
+           
+               <div class="flex items-center mt-2">
+                   <p class="text-lg font-bold text-red-700 cursor-auto ">R{{item.price}}</p>
+                   <div class="ml-auto me-2 ">
+                     <div class="border-3 w-11 h-7 rounded-lg flex justify-center items-center  text-white bg-blue-700" [routerLink]="['/view_product', item.id]">
+                       <svg class="w-6 h-6 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                         <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+                         <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                       </svg>
+                     </div>
+                   </div>
+               </div>
+           </div>
+       </a>
+   </div> 
+   <!-- <table class="w-full border-collapse border border-gray-300">
+    <thead>
+      <tr>
+        <th class="text-left border border-gray-300 p-2">Image</th>
+        <th class="text-left border border-gray-300 p-2">Title</th>
+        <th class="text-left border border-gray-300 p-2">Price</th>
+        <th class="text-left border border-gray-300 p-2">View</th>
+        <th class="text-left border border-gray-300 p-2">Edit</th>
+        <th class="text-left border border-gray-300 p-2">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products" class="hover:bg-gray-100">
+        <td class="border border-gray-300 p-2 flex justify-center items-center">
+          <img [src]="item.imageUrl" alt="Product" class="w-28 h-24" />
+        </td>
+        <td class="border border-gray-300 p-2 overflow-hidden text-ellipsis">
+          <span class="text-gray-400 uppercase text-xs truncate">{{item.title}}</span>
+        </td>
+        <td class="border border-gray-300 p-2">
+          <p class="text-lg font-bold text-red-700 cursor-auto">R{{item.price}}</p>
+        </td>
+        <td class="border border-gray-300 p-2">
+          <div class="border border-gray-300 rounded-lg flex justify-center items-center text-white bg-blue-700 w-11 h-7" [routerLink]="['/view_product', item.id]">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+              <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            </svg>
+          </div>
+        </td>
+        <td class="border border-gray-300 p-2">
+          <div class="border border-gray-300 rounded-lg flex justify-center items-center text-white bg-green-700 w-11 h-7 cursor-pointer" (click)="openUpdateModal(item)">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="M12 2v20m10-10H2"/>
+            </svg>
+          </div>
+        </td>
+        <td class="border border-gray-300 p-2">
+          <div class="border border-gray-300 rounded-lg flex justify-center items-center text-white bg-red-700 w-11 h-7" [routerLink]="['/delete_product', item.id]">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="M6 19V7m6 12V7m6 12V7M5 7h14M4 7V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/>
+            </svg>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <app-updateproduct [product]="selectedProduct" (close)="closeUpdateModal()" *ngIf="isUpdateModalOpen"></app-updateproduct> -->
+  <app-finalnav></app-finalnav>

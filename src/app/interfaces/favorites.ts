@@ -1,0 +1,27 @@
+export interface Favorites {
+    userId: {
+        ref: string,
+        required: Boolean,
+      },
+      itemId: {
+        _id: string,
+        ref: string,
+        required: Boolean,
+        unique: Boolean,
+        businessId: string, 
+        category: string[], 
+        onPromo: boolean, 
+        rating: number, 
+        ratingCount: number,
+        title: string, 
+        description: string, 
+        price: number, 
+        stock: number, 
+        imageUrl: string, 
+        variant: string, 
+        quantity: number,
+      },
+      createdAt: any,
+      imageUrl: string,
+      id:any,
+}

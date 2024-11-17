@@ -1,0 +1,52 @@
+<a (click)="goBack()" class="flex space-x-3 rtl:space-x-reverse">
+  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+  </svg>
+  
+</a>
+<div class="bg-white shadow-md rounded-lg p-6">
+  <h2 class="text-2xl font-bold mb-4">Add a New Product</h2>
+
+  <div class="p-4 bg-white rounded-lg shadow-xl">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="space-y-6">
+      <div class="form-group">
+        <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+        <select type="text" class="select select-bordered w-full mt-1" id="location" [(ngModel)]="product.category" name="location" placeholder="Enter location" required>
+          <option value="cyclinders">Cylinders</option>
+          <option value="stoves">Stoves</option>
+          <option value="spares">Spares</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="parking" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+        <input type="text" [(ngModel)]="product.title" class="input input-bordered w-full mt-1" name="parking" required>
+      </div>
+
+      <div class="form-group">
+        <label for="rooms" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+        <input type="text" class="input input-bordered w-full mt-1" id="rooms" [(ngModel)]="product.description" name="rooms" placeholder="description here..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="electricity" class="block text-sm font-medium text-gray-700 mb-1">Price</label>
+        <input type="number" [(ngModel)]="product.price" class="input input-bordered w-full mt-1" name="electricity" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bathroom" class="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
+        <input type="number" [(ngModel)]="product.stock" class="input input-bordered w-full mt-1" name="bathroom">
+      </div>
+
+      <div class="form-group">
+        <label for="images" class="block text-sm font-medium text-gray-700 mb-1">Add Image</label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <input type="file" class="file-input file-input-bordered w-full mt-1" name="images" (change)="fileSelect($event)">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-secondary w-full"> Add </button>
+    </form>
+  </div>
+</div>
+

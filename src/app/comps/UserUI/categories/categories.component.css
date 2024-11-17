@@ -1,0 +1,45 @@
+.holderr{
+    padding: 20px;
+    background-color: white;
+}
+
+.title{
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+.prod-holder{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* .card{
+    background-color: white;
+    padding: 15px;
+    height: auto;
+    height: 120px;
+    width: 85%;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.27);
+} */
+
+.hold{
+
+    display: flex;
+
+}
+
+.details{
+    width: 50%;
+}
+
+.itemsImg{
+
+    height: 50%;
+    width: 50%;
+
+}
+.t{
+    border: 1px solid blue;
+}

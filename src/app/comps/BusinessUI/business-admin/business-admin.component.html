@@ -1,0 +1,92 @@
+<div class="container py-8 px-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <h1 class="text-3xl font-bold text-black mb-4 uppercase tracking-wider leading-tight text-center font-sans-serif">
+                Welcome to Mzimkhulu Gas
+            </h1>
+            <div class="justify-center md:justify-start">
+
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <img src="" alt="" class="h-auto max-w-lg rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out">
+
+        </div>
+    </div>
+
+</div>
+
+<section class="px-2" >
+
+  <div class="container py-8 px-3">
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-violet-500 text-white px-2 py-3  rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2">Sales</h2>
+        <p class="text-2xl font-bold">20</p>
+      </div>
+      <div class="bg-yellow-500 text-white px-2 py-3  rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2">Visitors</h2>
+        <p class="text-2xl font-bold">30</p>
+      </div>
+      <div class="bg-orange-500 text-white px-2 py-3 text-center rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2"> Orders</h2>
+        <p class="text-2xl font-bold">10</p>
+      </div>
+      <div class="bg-orange-500 text-white px-2 py-3 text-center rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2">OnPromo</h2>
+        <p class="text-2xl font-bold">0</p>
+      </div>
+      <div class="bg-orange-500 text-white px-2 py-3 text-center rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2">Products</h2>
+        <p class="text-2xl font-bold">32</p>
+      </div>
+    </div>
+  
+    <div class="grid grid-cols-3 mt-3">
+              <a routerLink="/stats" class=" h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-red-500 text-white cursor-pointer">
+                  <span>
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                    </svg>
+                  </span>
+                  <p class="text-s font-manrope font-bold">Driver in route</p>
+              </a>
+              <a routerLink="/dashboard" class=" h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-green-500 text-white cursor-pointer">
+                  <span>
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                  </span>
+                  <p class="text-s font-manrope font-bold">Delivery Breakdown</p>
+              </a>
+              <a routerLink="/addproduct" class=" h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-blue-500 text-white cursor-pointer">
+                  <span>
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                    </svg>
+                  </span>
+                  <p class="text-s font-manrope font-bold">Products</p>
+              </a>
+    
+    <!-- <div class="grid grid-cols-3 gap-4 mb-6" id="delivery-breakdown">
+      <div class="bg-gray-100 rounded-lg p-4">
+        <h3 class="text-lg font-medium mb-2">Current Deliveries</h3>
+        <p class="text-4xl font-bold">{{ currentDeliveries }}</p>
+      </div>
+      <div class="bg-gray-100 rounded-lg p-4">
+        <h3 class="text-lg font-medium mb-2">Previous Deliveries</h3>
+        <p class="text-4xl font-bold">{{ previousDeliveries }}</p>
+      </div>
+      <div class="bg-gray-100 rounded-lg p-4">
+        <h3 class="text-lg font-medium mb-2">Total Deliveries</h3>
+        <p class="text-4xl font-bold">{{ currentDeliveries + previousDeliveries }}</p>
+      </div>
+    </div>-->
+    </div> 
+</div>
+</section>
+
+
+  <app-finalnav></app-finalnav>
+  

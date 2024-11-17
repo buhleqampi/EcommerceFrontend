@@ -1,0 +1,173 @@
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.login-container {
+    background-color: white;
+}
+
+form {
+    min-width: 300px;
+    background-color: #3A3C3C;
+    @apply absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2;
+    border-radius: 10px;
+    @apply flex flex-col gap-4;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    @apply shadow-lg px-10 py-4;
+}
+
+form * {
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.message {
+    @apply flex flex-col justify-center items-center;
+    font-family: "Roboto Condensed", sans-serif;
+    gap: 5px;
+    margin: 10px 0px;
+}
+
+.tit {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    margin: 10px 0px;
+}
+
+form h3 {
+    @apply text-2xl font-semibold text-center;
+}
+
+form a {
+    color: white;
+}
+
+label {
+    @apply block text-lg font-semibold;
+}
+
+input {
+    @apply block h-10 w-full bg-opacity-20 rounded-md px-4 mt-2 text-base font-light;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+::placeholder {
+    color: #f4dff888;
+}
+
+button {
+    @apply py-2 px-4 bg-blue-500 text-white rounded-md mb-4 text-base font-bold tracking-wide;
+    cursor: pointer;
+}
+
+button:hover {
+    @apply bg-blue-600;
+}
+
+a:hover {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    color: #389CF9;
+    font-weight: bold;
+}
+
+.other {
+    margin: 15px 0px;
+    text-align: center;
+}
+    *,
+    *:before,
+    *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .login-container {
+        background-color: white;
+    }
+
+    form {
+        min-width: 300px;
+        background-color: #3A3C3C;
+        @apply absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2;
+        border-radius: 10px;
+        @apply flex flex-col gap-4;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        @apply shadow-lg px-10 py-4;
+    }
+
+    form * {
+        color: #ffffff;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+    }
+
+    .message {
+        @apply flex flex-col justify-center items-center;
+        font-family: "Roboto Condensed", sans-serif;
+        gap: 5px;
+        margin: 10px 0px;
+    }
+
+    .tit {
+        text-align: center;
+        font-family: "Lato", sans-serif;
+        margin: 10px 0px;
+    }
+
+    form h3 {
+        @apply text-2xl font-semibold text-center;
+    }
+
+    form a {
+        color: white;
+    }
+
+    label {
+        @apply block text-lg font-semibold;
+    }
+
+    input {
+        @apply block h-10 w-full bg-opacity-20 rounded-md px-4 mt-2 text-base font-light;
+        background-color: rgba(255, 255, 255, 0.07);
+    }
+
+    ::placeholder {
+        color: #f4dff888;
+    }
+
+    button {
+        @apply py-2 px-4 bg-blue-500 text-white rounded-md mb-4 text-base font-bold tracking-wide;
+        cursor: pointer;
+    }
+
+    button:hover {
+        @apply bg-blue-600;
+    }
+
+    a:hover {
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    a {
+        color: #389CF9;
+        font-weight: bold;
+    }
+
+    .other {
+        margin: 15px 0px;
+        text-align: center;
+    }

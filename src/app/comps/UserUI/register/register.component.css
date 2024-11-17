@@ -1,0 +1,149 @@
+
+*,
+*:before,
+*:after{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+.login-container{
+    background-color: white;
+}
+
+form{
+    min-width: 300px;
+    background-color: #030a0a;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* backdrop-filter: blur(10px); */
+    border: 2px solid rgba(255,255,255,0.1);
+    padding: 10px 25px;
+}
+
+form *{
+    /* font-family: 'Poppins',sans-serif; */
+
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Condensed", sans-serif;
+    gap: 5px;
+    margin: 10px 0px;
+    margin-top: 0;
+}
+
+.tit{
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    margin: 10px 0px;
+}
+
+
+
+form h3{
+font-size: 32px;
+font-weight: 500;
+line-height: 42px;
+text-align: center;
+}
+
+form a{
+    color: white;
+}
+label{
+display: block;
+font-size: 16px;
+font-weight: 500;
+font-family: 'Poppins',sans-serif;
+color: #f3f3f3
+}
+
+input{
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #f4dff888;
+}
+button{
+    padding: 9.5px 5px;
+    background-color:#306fc9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-size: medium;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+}
+button:hover{
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: #F4DFF8;
+    color:#389CF9  !important;
+    cursor: pointer;    
+}
+a{
+    color: #389CF9;
+    font-weight: bold;
+}
+a:hover{
+    color: white;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.other{
+    margin: 15px 0px;
+    text-align: center;
+}
+
+
+/* 
+.social div{
+background: red;
+width: 150px;
+border-radius: 3px;
+padding: 5px 10px 10px 5px;
+background-color: rgba(255,255,255,0.27);
+color:#0e0d0d;
+text-align: center;
+}
+.social{
+margin-top: 30px;
+display: flex;
+} 
+.social div:hover{
+background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+margin-left: 25px;
+}
+.social i{
+margin-right: 4px;
+} */

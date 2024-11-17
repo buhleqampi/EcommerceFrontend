@@ -1,0 +1,275 @@
+<nav class="border-blue-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+    <a routerLink="/home" class="flex space-x-3 rtl:space-x-reverse">
+        <img src="../../../../assets/Screenshot_2024-07-03_060625-removebg-preview.png" class="h-16 w-28" alt="Flowbite Logo" />
+    </a>
+      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+        <div class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 flex items-center justify-center">
+          <img alt="Tailwind CSS Navbar component"
+            src="{{user.img}}" routerLink="/userprofile" class="rounded-full">
+        </div>
+      </div>
+  </div>
+</nav>
+
+<!-- carousel starts -->
+ <!--<div id="default-carousel" class="relative w-full" data-carousel="slide">
+   Carousel wrapper 
+  <div class="relative h-56 overflow-hidden rounded-md md:h-96">
+        Item 1 
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="../../../assets/DELIVER0709.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          <h3>Fast Delivery</h3>
+      </div>
+       Item 2 
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="../../../assets/2287_generated.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          <h3>Secure Payments</h3>
+      </div>
+       Item 3 
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="../../../assets/customer_service_generated.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          <h3>24/7 Support</h3>
+      </div>
+  </div>
+  <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+  </div>
+   Slider controls 
+  <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+          </svg>
+          <span class="sr-only">Previous</span>
+      </span>
+  </button>
+  <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg>
+          <span class="sr-only">Next</span>
+      </span>
+  </button>
+</div> -->
+<!-- carousel ends -->
+
+<div class="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex">
+      <img [src]="this.images[this.currentIndex]" alt="">
+      <p class="carousel-caption" *ngIf="captions[i]">{{ captions[i] }}</p>
+    </div>
+  </div>
+  <a class="carousel-previous carousel-control-prev bg-red-500 color-black" (click)="prevSlide()">
+    <span class="carousel-control-prev-icon color-black"></span>
+  </a>
+  <a class="carousel-control-next bg-red-500" (click)="nextSlide()">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<!-- component -->
+<section class="mt-4">
+  <form class="srch_wrapper w-60 h-10 mx-auto  ">
+    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div class="relative flex ">
+        <!-- <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none ">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+        </div> -->
+        <input type="search" id="default-search" class="block  w-full px-2 py-2 ps-10 text-sm text-gray-900 border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 shadow-inner search-cancel focus:outline-none" placeholder="Search..." required />
+
+        <!-- <button type="submit" class="text-white absolute end-2.5 bottom-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 search-cancel">X</button> -->
+    </div>
+</form>
+</section>
+<main>
+<div class="container  mt-6">
+  <div class="flex flex-col m-auto p-auto cardCont1 mb-2">
+    <div class="flex justify-between my-2">
+      <h1 class="text-l font-bold m-2" #cylider>Gas Cylinders</h1>
+      <div  routerLink="/category/{{catname}}" class="relative w-6 h-6 overflow-hidden flex justify-center items-center mt-1 me-2 bg-gray-100 rounded-full dark:bg-gray-600">
+        <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+</svg>
+    </div>
+    </div>
+    <div
+      class="flex overflow-x-scroll pb-10 hide-scroll-bar"
+    >
+      <div
+        class="flex flex-nowrap lg:ml-40 md:ml-20 ml-5 "
+      >
+        <div class="inline-block pl-0 pr-3 rounded-lg">
+          <div class="w-32 h-32 shadow-xl border-slate-700 rounded-lg bg-white flex justify-center items-center">
+            <img src="../../../../assets/download.png" class="rounded-lg" />
+          </div>
+
+        </div>
+        <div class=" flex flex-nowrap" *ngFor="let item of Cylinders.slice(2,5)  ">
+          <div class="inline-block px-2">
+          <div class="w-32 h-32 border-600  rounded-lg shadow-xl flex justify-center items-center bg-white">
+            <img class="w-24 h-28 " src="{{item.imageUrl}}" />
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="flex flex-col m-auto p-auto cardCont2 mb-2">
+  <div class="flex justify-between my-2">
+    <h1 class="text-l font-bold m-2">Stoves</h1>
+    <div routerLink="/category/Stoves" class="relative w-6 h-6 overflow-hidden flex justify-center items-center mt-1 me-2 bg-gray-100 rounded-full dark:bg-gray-600">
+      <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+</svg>
+  </div>
+  </div>
+  <div
+    class="flex overflow-x-scroll pb-10 hide-scroll-bar"
+  >
+    <div
+      class="flex flex-nowrap lg:ml-40 md:ml-20 ml-5 "
+    >
+      <div class="inline-block pl-0 pr-3 rounded-lg">
+        <div class="w-32 h-32 shadow-xl border-slate-700 rounded-lg bg-white">
+          <img src="../../../../assets/stove.png" class="rounded-lg "/>
+        </div>
+      </div>
+      <div class=" flex flex-nowrap" *ngFor="let item of Stoves.slice(1,4)  ">
+        <div class="inline-block px-2 ">
+        <div class="w-32 h-32 border-600 shadow-xl rounded-lg flex justify-center items-center   bg-white">
+          <img class="w-20 h-20  " src="{{item.imageUrl}}" />
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex flex-col  m-auto p-auto cardCont3 mb-2">
+  <div class="flex justify-between my-2">
+    <h1 class="text-l font-bold m-2">Spares</h1>
+    <div  routerLink="/category/Spares"class="relative w-6 h-6 overflow-hidden flex justify-center items-center mt-1 me-2 bg-gray-100 rounded-full dark:bg-gray-600">
+      <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+</svg>
+  </div>
+  </div>
+  <div
+    class="flex overflow-x-scroll pb-10 hide-scroll-bar"
+  >
+    <div
+      class="flex flex-nowrap lg:ml-40 md:ml-20 ml-5 "
+    >
+      <div class="inline-block pl-0 pr-3 ">
+        <div class="w-32 h-32 shadow-xl border-slate-700 rounded-lg  bg-white">
+          <img src="../../../../assets/images.png" />
+        </div>
+      </div>
+      <div class=" flex flex-nowrap" *ngFor="let item of Spares.slice(0, 4)  ">
+        <div class="inline-block px-2">
+        <div class="w-32 h-32 border-600 shadow-xl rounded-lg bg-white">
+          <img class="w-24 h-28 " src="{{item.imageUrl}}" class="rounded-lg" />
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</main>
+<section class="container mt-5 mb-24">
+<h1 class="joinH1 text-center mb-4 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white underline underline-offset-4">Services</h1>
+  <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <!-- <svg class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"/>
+    </svg> -->
+    <a href="#">
+        <h5 class="mb-2 text-sm font-semibold tracking-tight text-gray-900 dark:text-white ">Gas Supplier</h5>
+    </a>
+    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">A leading supplier of equipment and services to residential and commercial customers.  …</p>
+    <a href="#" class="inline-flex font-medium items-center text-blue-600 hover:underline">
+        See our guideline
+        <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
+        </svg>
+    </a>
+</div>
+<div class="max-w-sm p-6 my-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <!-- <svg class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"/>
+  </svg> -->
+  <a href="#">
+      <h5 class="mb-2 text-sm font-semibold tracking-tight text-gray-900 dark:text-white ">Repairs</h5>
+  </a>
+  <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Extensive repairs for a wide range of equipment. These include gas boilers, heating and hot water repairs.  …</p>
+  <a href="#" class="inline-flex font-medium items-center text-blue-600 hover:underline">
+      See our guideline
+      <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
+      </svg>
+  </a>
+</div>
+<div class="max-w-sm p-6 my-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <!-- <svg class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"/>
+  </svg> -->
+  <a href="#">
+      <h5 class="mb-2 text-sm font-semibold tracking-tight text-gray-900 dark:text-white ">Delivery</h5>
+  </a>
+  <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Extensive repairs for a wide range of equipment. These include gas boilers, heating and hot water repairs.  …</p>
+  <a href="#" class="inline-flex font-medium items-center text-blue-600 hover:underline">
+      See our guideline
+      <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
+      </svg>
+  </a>
+</div>
+<div class="socials">
+  <div class="bg-white w-full h-auto py-8 flex items-center justify-center gap-4 flex-wrap">
+    <button class="group transition-all duration-500 hover:-translate-y-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 93 92" fill="none">
+    <rect x="1.13867" width="91.5618" height="91.5618" rx="15" fill="#337FFF"/>
+    <path d="M57.4233 48.6403L58.7279 40.3588H50.6917V34.9759C50.6917 32.7114 51.8137 30.4987 55.4013 30.4987H59.1063V23.4465C56.9486 23.1028 54.7685 22.9168 52.5834 22.8901C45.9692 22.8901 41.651 26.8626 41.651 34.0442V40.3588H34.3193V48.6403H41.651V68.671H50.6917V48.6403H57.4233Z" fill="white"/>
+    </svg>
+    </button>
+    <button class="group transition-all duration-500 hover:-translate-y-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 93 92" fill="none">
+      <rect x="0.138672" width="91.5618" height="91.5618" rx="15" fill="black"/>
+      <path d="M50.7568 42.1716L69.3704 21H64.9596L48.7974 39.383L35.8887 21H21L40.5205 48.7983L21 71H25.4111L42.4788 51.5869L56.1113 71H71L50.7557 42.1716H50.7568ZM44.7152 49.0433L42.7374 46.2752L27.0005 24.2492H33.7756L46.4755 42.0249L48.4533 44.7929L64.9617 67.8986H58.1865L44.7152 49.0443V49.0433Z" fill="white"/>
+      </svg>
+    </button>
+    <button class="group transition-all duration-500 hover:-translate-y-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 93 92" fill="none">
+    <rect x="1.13867" width="91.5618" height="91.5618" rx="15" fill="#00D95F"/>
+    <path d="M23.5068 66.8405L26.7915 54.6381C24.1425 49.8847 23.3009 44.3378 24.4211 39.0154C25.5413 33.693 28.5482 28.952 32.89 25.6624C37.2319 22.3729 42.6173 20.7554 48.0583 21.1068C53.4992 21.4582 58.6306 23.755 62.5108 27.5756C66.3911 31.3962 68.7599 36.4844 69.1826 41.9065C69.6053 47.3286 68.0535 52.7208 64.812 57.0938C61.5705 61.4668 56.8568 64.5271 51.5357 65.7133C46.2146 66.8994 40.6432 66.1318 35.8438 63.5513L23.5068 66.8405ZM36.4386 58.985L37.2016 59.4365C40.6779 61.4918 44.7382 62.3423 48.7498 61.8555C52.7613 61.3687 56.4987 59.5719 59.3796 56.7452C62.2605 53.9185 64.123 50.2206 64.6769 46.2279C65.2308 42.2351 64.445 38.1717 62.4419 34.6709C60.4388 31.1701 57.331 28.4285 53.6027 26.8734C49.8745 25.3184 45.7352 25.0372 41.8299 26.0736C37.9247 27.11 34.4729 29.4059 32.0124 32.6035C29.5519 35.801 28.2209 39.7206 28.2269 43.7514C28.2237 47.0937 29.1503 50.3712 30.9038 53.2192L31.3823 54.0061L29.546 60.8167L36.4386 58.985Z" fill="white"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M54.9566 46.8847C54.5093 46.5249 53.9856 46.2716 53.4254 46.1442C52.8651 46.0168 52.2831 46.0186 51.7236 46.1495C50.8831 46.4977 50.3399 47.8134 49.7968 48.4713C49.6823 48.629 49.514 48.7396 49.3235 48.7823C49.133 48.8251 48.9335 48.797 48.7623 48.7034C45.6849 47.5012 43.1055 45.2965 41.4429 42.4475C41.3011 42.2697 41.2339 42.044 41.2557 41.8178C41.2774 41.5916 41.3862 41.3827 41.5593 41.235C42.165 40.6368 42.6098 39.8959 42.8524 39.0809C42.9063 38.1818 42.6998 37.2863 42.2576 36.5011C41.9157 35.4002 41.265 34.42 40.3825 33.6762C39.9273 33.472 39.4225 33.4036 38.9292 33.4791C38.4359 33.5546 37.975 33.7709 37.6021 34.1019C36.9548 34.6589 36.4411 35.3537 36.0987 36.135C35.7562 36.9163 35.5939 37.7643 35.6236 38.6165C35.6256 39.0951 35.6864 39.5716 35.8046 40.0354C36.1049 41.1497 36.5667 42.2144 37.1754 43.1956C37.6145 43.9473 38.0937 44.6749 38.6108 45.3755C40.2914 47.6767 42.4038 49.6305 44.831 51.1284C46.049 51.8897 47.3507 52.5086 48.7105 52.973C50.1231 53.6117 51.6827 53.8568 53.2237 53.6824C54.1018 53.5499 54.9337 53.2041 55.6462 52.6755C56.3588 52.1469 56.9302 51.4518 57.3102 50.6512C57.5334 50.1675 57.6012 49.6269 57.5042 49.1033C57.2714 48.0327 55.836 47.4007 54.9566 46.8847Z" fill="white"/>
+    </svg>
+    </button>
+    <button class="group transition-all duration-500 hover:-translate-y-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 93 93" fill="none">
+    <rect x="1.13867" y="1" width="91.5618" height="91.5618" rx="15" fill="#006699"/>
+    <path d="M37.1339 63.4304V40.9068H29.6473V63.4304H37.1346H37.1339ZM33.3922 37.8321C36.0023 37.8321 37.6273 36.1025 37.6273 33.9411C37.5785 31.7304 36.0023 30.0491 33.4418 30.0491C30.8795 30.0491 29.2061 31.7304 29.2061 33.9409C29.2061 36.1023 30.8305 37.8319 33.3431 37.8319H33.3916L33.3922 37.8321ZM41.2777 63.4304H48.7637V50.8535C48.7637 50.1813 48.8125 49.5072 49.0103 49.0271C49.5513 47.6815 50.7831 46.2887 52.8517 46.2887C55.5599 46.2887 56.644 48.354 56.644 51.3822V63.4304H64.1297V50.516C64.1297 43.598 60.4369 40.3787 55.5115 40.3787C51.4733 40.3787 49.6998 42.6357 48.7144 44.173H48.7643V40.9075H41.2781C41.3759 43.0205 41.2775 63.4312 41.2775 63.4312L41.2777 63.4304Z" fill="white"/>
+    </svg>
+    </button>
+    <button class="group transition-all duration-500 hover:-translate-y-2">
+    <svg width="48" height="48" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0.638672" y="0.5" width="90.5618" height="90.5618" rx="14.5" fill="white" stroke="#C4CFE3"/>
+    <path d="M22.0065 66.1236H30.4893V45.5227L18.3711 36.4341V62.4881C18.3711 64.4997 20.001 66.1236 22.0065 66.1236Z" fill="#4285F4"/>
+    <path d="M59.5732 66.1236H68.056C70.0676 66.1236 71.6914 64.4937 71.6914 62.4881V36.4341L59.5732 45.5227" fill="#34A853"/>
+    <path d="M59.5732 29.7693V45.5229L71.6914 36.4343V31.587C71.6914 27.0912 66.5594 24.5282 62.9663 27.2245" fill="#FBBC04"/>
+    <path d="M30.4893 45.5227V29.769L45.0311 40.6754L59.5729 29.769V45.5227L45.0311 56.429" fill="#EA4335"/>
+    <path d="M18.3711 31.587V36.4343L30.4893 45.5229V29.7693L27.0962 27.2245C23.4971 24.5282 18.3711 27.0912 18.3711 31.587Z" fill="#C5221F"/>
+    </svg>
+    </button>
+    </div>
+</div>
+</section>
+
+<app-footer></app-footer>

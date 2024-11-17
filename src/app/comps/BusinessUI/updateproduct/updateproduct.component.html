@@ -1,0 +1,71 @@
+<!-- updateproduct.component.html -->
+<div class="modal" [ngClass]="{ 'is-active': isModalOpen }">
+    <div class="modal-background" (click)="closeModal()"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Update Product</p>
+        <button class="delete" aria-label="close" (click)="closeModal()"></button>
+      </header>
+      <section class="modal-card-body">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+          <div class="field">
+            <label class="label">Category</label>
+            <div class="control">
+              <input class="input" type="text" name="category" [(ngModel)]="product.category" required>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+              <input class="input" type="text" name="title" [(ngModel)]="product.title" required>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <textarea class="textarea" name="description" [(ngModel)]="product.description" required></textarea>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Price</label>
+            <div class="control">
+              <input class="input" type="number" name="price" [(ngModel)]="product.price" required>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Stock</label>
+            <div class="control">
+              <input class="input" type="number" name="stock" [(ngModel)]="product.stock" required>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Image</label>
+            <div class="control">
+              <input class="input" type="file" (change)="fileSelect($event)">
+            </div>
+          </div>
+  
+          <div class="field">
+            <figure class="image is-128x128" *ngIf="imagePreview">
+              <img [src]="imagePreview" alt="Image preview">
+            </figure>
+          </div>
+  
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" type="submit">Update</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-light" type="button" (click)="closeModal()">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+  

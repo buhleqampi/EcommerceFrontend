@@ -1,0 +1,125 @@
+
+<app-navigation></app-navigation>
+
+<section class="bg-slate-100 pt-8 pb-16 antialiased h-full dark:bg-gray-900 md:py-16">
+    <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+      <h2 class="text-xl font-semibold text-white-800  sm:text-2xl">Shopping Cart</h2>
+
+      <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
+        <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
+          <div class="space-y-6">
+            <div *ngFor="let item of cartItems1;let i=index" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6">
+              <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
+                <a href="#" class="shrink-0 md:order-1">
+                  <img class=" h-20 w-20 dark:block" src="{{item.productId.imageUrl}}" alt="imac image" />
+                </a>
+
+                <label for="counter-input" class="sr-only">Choose quantity:</label>
+                <div class="flex items-center justify-between md:order-3 md:justify-end">
+                  <div class="flex items-center">
+                    <button (click)="decr(item.quantity, i)" type="button" id="decrement-button" data-input-counter-decrement="counter-input" class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                      <svg class="h-2.5 w-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                      </svg>
+                    </button>
+                    <input type="number" id="counter-input" data-input-counter class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white" placeholder="" min="1" value="{{item.quantity}}"  (ngModelChange)="qntUpdate($event)" required />
+                    <button (click)="incre(item.quantity, i)" type="button" id="increment-button" data-input-counter-increment="counter-input" class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                      <svg class="h-2.5 w-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="text-end md:order-4 md:w-32">
+                    <p class="text-base font-bold text-red-700 dark:text-white">R{{item.productId.price}}</p>
+                  </div>
+                </div>
+
+                <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
+                  <a href="#" class="text-base font-medium text-gray-900 hover:underline dark:text-white">{{item.productId.description}}</a>
+
+                  <div class="flex items-center gap-4">
+                    
+
+                    <button type="button" (click)="removeProduct(item, $event)" class="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500">
+                      <svg class="me-1.5 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                      </svg>
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="totalAmount == 0" class=" h-56">
+              <img src="../../../../assets/emptyCart.jpg" alt="" srcset="">
+            </div>
+
+            
+          </div>
+<div class="container mt-9 mb-20 ">
+  <div class="flex justify-around items-center h-10 rounded-lg mb-10">
+    <!-- <h1 class="text-xl font-bold text-white">Total:  <span class="">{{totalAmount | currency:"R"}}</span></h1> -->
+    <button type='button' class='py-2.5 px-6 text-lg border border-gray-300 rounded-lg shadow-xs bg-white  text-red-700 font-extrabold transition-all duration-500 hover:bg-gray-50'>Total:  <span class="">{{totalAmount | currency:"R"}}</span>
+    </button>
+
+    
+  </div>
+
+  <div class="  h-24 rounded-lg mt-2 ">
+    <!-- <h1 class="text-xl font-bold text-white">Total:  <span class="">{{totalAmount | currency:"R"}}</span></h1> -->
+    <div class="flex items-center mb-2">
+      <input (click)="hide()"  id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+      <label for="default-radio-1"  class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Collect In-Store</label>
+  </div>
+  <div class="flex items-center mb-4">
+      <input (click)="showAddress()" checked id="default-radio-2" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+      <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Delivery</label>
+  </div>
+
+  <div class="flex flex-col gap-5 mb-10" *ngIf="isHidden">
+    <div class="relative">
+    <label class="flex  items-center mb-2 text-gray-600 text-xs font-medium"> Address <svg width="7" height="7" class="ml-1" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.11222 6.04545L3.20668 3.94744L1.43679 5.08594L0.894886 4.14134L2.77415 3.18182L0.894886 2.2223L1.43679 1.2777L3.20668 2.41619L3.11222 0.318182H4.19105L4.09659 2.41619L5.86648 1.2777L6.40838 2.2223L4.52912 3.18182L6.40838 4.14134L5.86648 5.08594L4.09659 3.94744L4.19105 6.04545H3.11222Z" fill="#EF4444"></path></svg>
+    </label>
+    <input [(ngModel)]="address"  type="text" id="default-search" class="block w-full max-w-xs px-4 py-2 text-sm font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none leading-relaxed"  required="">
+    </div>
+      
+  </div>
+  
+
+  </div>
+
+</div>
+
+<!-- <div class="flex flex-col gap-5 mb-4">
+  <div class="relative">
+  <label class="flex  items-center mb-2 text-gray-600 text-xs font-medium"> Address <svg width="7" height="7" class="ml-1" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3.11222 6.04545L3.20668 3.94744L1.43679 5.08594L0.894886 4.14134L2.77415 3.18182L0.894886 2.2223L1.43679 1.2777L3.20668 2.41619L3.11222 0.318182H4.19105L4.09659 2.41619L5.86648 1.2777L6.40838 2.2223L4.52912 3.18182L6.40838 4.14134L5.86648 5.08594L4.09659 3.94744L4.19105 6.04545H3.11222Z" fill="#EF4444"></path></svg>
+  </label>
+  <input type="text" id="default-search" class="block w-full max-w-xs px-4 py-2 text-sm font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none leading-relaxed"  required="">
+  </div>
+    
+</div> -->
+
+<div class="container-fluid mt-10" class="p-[2px] mb-[2rem]">
+  <div class="flex flex-col justify-around items-center gap-4 h-10 w-100 ">
+    <div *ngIf="isSuccesful" class="z-40 w-full text-center ">
+      <span id="badge-dismiss-default" class="inline-flex items-center px-2 py-1 me-2 text-lg font-medium text-blue-800 bg-blue-100 rounded dark:bg-blue-900 dark:text-blue-300">
+        {{message}}
+        <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300" data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+        <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+        </svg>
+        <span class="sr-only">Remove badge</span>
+        </button>
+        </span>
+    </div>
+  <button class="btn btn-secondary w-100 font-extrabold"  (click)="placeOrder()">{{ButtonText}}</button>
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+

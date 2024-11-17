@@ -1,0 +1,31 @@
+
+
+<div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-blue-500 border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+  <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+    <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group" [routerLink]="['/admin']">
+      <svg class="w-5 h-5 mb-2 text-black dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+        <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+      </svg>
+      <span class="text-sm text-black dark:text-black-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Home</span>
+    </button>
+    <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group" [routerLink]="['/dashboard']">
+      <svg class="w-5 h-5 mb-2 text-black dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M12 4h6a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H12V4Zm-2 0H2v12h8V4ZM0 4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4Z"/>
+      </svg>
+      <span class="text-sm text-black dark:text-black-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Dashboard</span>
+    </button>
+    <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group" [routerLink]="'/settings'">
+      <svg class="w-5 h-5 mb-2 text-black dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12.25V1m0 11.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M4 19v-2.25m6-13.5V1m0 2.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M10 19V7.75m6 4.5V1m0 11.25a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM16 19v-2"/>
+      </svg>
+      <span class="text-sm text-black dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Settings</span>
+    </button>
+    <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group" [routerLink]="['/stats']">
+      <svg class="w-5 h-5 mb-2 text-black dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19.5 12h-2.5v7h-2v-7h-2.5L15 7.5l3.5 4.5zm-3.5-7l-8.5 11h2.5l1.5-2h6l1.5 2h2.5L16 5zm-8.5 13v-2h-2v2h2zm4 0v-2h-2v2h2zm4 0v-2h-2v2h2z"/>
+      </svg>
+      <span class="text-sm text-black dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Stats</span>
+    </button>
+  </div>
+</div>
+

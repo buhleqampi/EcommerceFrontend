@@ -1,0 +1,50 @@
+<div class="login-container">
+  <form [formGroup]="userForm" (ngSubmit)="login()">
+    <h2 class="tit">
+      <a routerLink="/welcome" class="text-black ml-20">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+      Shukuma
+    </h2>
+      <div class="message">
+          <p>Access Delivery Excellence</p>
+          <p>with Your Account</p>
+      </div>
+
+      <div class="form-group">
+          <label for="email">Email:</label>
+          <input id="email" type="email" formControlName="email" class="form-control text-black bg-white focus:ring-orange-500" placeholder="email" required>
+          <div *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.dirty || userForm.get('email')?.touched)" class="error">
+              <div *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</div>
+              <div *ngIf="userForm.get('email')?.errors?.['email']">Invalid email format.</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="password">Password:</label>
+          <input id="password" type="password" formControlName="password" class="form-control text-black bg-white focus:ring-orange-500" placeholder="Password" required>
+          <div *ngIf="userForm.get('password')?.invalid && (userForm.get('password')?.dirty || userForm.get('password')?.touched)" class="error">
+              <div *ngIf="userForm.get('password')?.errors?.['required']">Password is required.</div>
+          </div>
+      </div>
+
+      <p class="other">Don't have an account?<a href="register">REGISTER</a> </p>
+      <div>
+        <div *ngIf="isSuccessful" class="z-40 w-full text-center  ">
+          <div class="btn btn-success text-white px-3">
+            {{successMessage}} 
+           </div>
+        </div>
+
+        <div  *ngIf="isLogginFailed" class="z-40 w-full text-center  " >
+          
+          <div class="btn btn-error text-white px-3">
+            {{errorMessage}} 
+           </div>
+        </div>
+       
+      </div>
+      <button type="submit" class="btn btn-primary" >Login</button>
+  </form>
+</div>
+<!-- <app-register-business></app-register-business> -->
